@@ -1,1 +1,2 @@
-http://192.168.46.245:3000/api/hello
+f data['result'] == "":
+    #     return

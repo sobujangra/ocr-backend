@@ -26,10 +26,7 @@ app.config['UPLOAD_FOLDER'] = 'static/files'
 # class UploadFileForm(FlaskForm):
 #     file = FileField("File", validators=[InputRequired()])
 #     submit = SubmitField("Upload File")
-data = {
-    "status": "ok",
-    "result": "",
-}
+data = {"result": ""}
 
 
 @app.route('/', methods=['GET'])
@@ -76,9 +73,6 @@ def recognize_text(img_path):
 
 @app.route('/home', methods=['GET'])
 def returnJson():
-    if data['result'] == "":
-        return {"status": "Empty"}
-
     return json.dumps(data, indent=4)
 
 
